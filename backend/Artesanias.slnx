@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Artesanias.Api/Artesanias.Api.csproj" />
+    <Project Path="src/Artesanias.Application/Artesanias.Application.csproj" />
+    <Project Path="src/Artesanias.Domain/Artesanias.Domain.csproj" />
+    <Project Path="src/Artesanias.Infrastructure/Artesanias.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Artesanias.UnitTests/Artesanias.UnitTests.csproj" />
+    <Project Path="tests/Artesanias.IntegrationTests/Artesanias.IntegrationTests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,41 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.DotSettings.user
+
+# Sensitive config - NUNCA subir al repositorio
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+
+# EF Migrations (keep the Migrations folder but exclude snapshots from other branches)
+# backend/src/Artesanias.Infrastructure/Persistence/Migrations/
+
+# Node / Frontend
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Excluidos por solicitud de usuario
+diagram.mmd
+entidad_relacion.png
+INFORME_EVALUACION (1).pdf

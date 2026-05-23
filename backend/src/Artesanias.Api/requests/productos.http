@@ -1,0 +1,11 @@
+@host = http://localhost:5050
+
+### 1. Obtener lista paginada de productos
+GET {{host}}/api/v1/productos?page=1&pageSize=12
+
+### 2. Buscar productos
+GET {{host}}/api/v1/productos?search=poncho
+
+### 3. Obtener producto por ID
+@productoId = 00000000-0000-0000-0000-000000000000
+GET {{host}}/api/v1/productos/{{productoId}}

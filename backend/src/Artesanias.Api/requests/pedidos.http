@@ -1,0 +1,28 @@
+@host = http://localhost:5050
+@sessionId = {{$guid}}
+@token = YOUR_JWT_TOKEN_HERE
+
+### 1. Crear un pedido / checkout (Redirige a Stripe Checkout)
+POST {{host}}/api/v1/pedidos
+X-Session-Id: {{sessionId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nombreEnvio": "Saul Perez",
+  "direccionEnvio": "Av. Sol 123, Cusco",
+  "telefonoEnvio": "987654321",
+  "emailEnvio": "saul@example.com",
+  "departamentoEnvio": "Cusco",
+  "ciudadEnvio": "Cusco",
+  "codigoPostalEnvio": "08001"
+}
+
+### 2. Obtener detalles de un pedido
+@pedidoId = 00000000-0000-0000-0000-000000000000
+GET {{host}}/api/v1/pedidos/{{pedidoId}}
+Authorization: Bearer {{token}}
+
+### 3. Obtener reporte de todos los pedidos (Admin only)
+GET {{host}}/api/v1/pedidos
+Authorization: Bearer {{token}}

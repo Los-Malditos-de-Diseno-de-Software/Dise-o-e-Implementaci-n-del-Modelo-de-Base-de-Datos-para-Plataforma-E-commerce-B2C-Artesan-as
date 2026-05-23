@@ -1,0 +1,26 @@
+@host = http://localhost:5050
+@sessionId = {{$guid}}
+@productoId = 00000000-0000-0000-0000-000000000000
+
+### 1. Obtener carrito vacío (lo creará con el SessionId enviado)
+GET {{host}}/api/v1/carrito
+X-Session-Id: {{sessionId}}
+
+### 2. Agregar ítem al carrito
+POST {{host}}/api/v1/carrito/items
+X-Session-Id: {{sessionId}}
+Content-Type: application/json
+
+{
+  "productoId": "{{productoId}}",
+  "cantidad": 2
+}
+
+### 3. Obtener carrito actualizado
+GET {{host}}/api/v1/carrito
+X-Session-Id: {{sessionId}}
+
+### 4. Eliminar ítem del carrito
+@cartItemId = 00000000-0000-0000-0000-000000000000
+DELETE {{host}}/api/v1/carrito/items/{{cartItemId}}
+X-Session-Id: {{sessionId}}

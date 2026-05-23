@@ -1,0 +1,32 @@
+@host = http://localhost:5050
+@token = YOUR_ADMIN_JWT_TOKEN_HERE
+
+### 1. Obtener lista de maestros artesanos
+GET {{host}}/api/v1/artesanos
+
+### 2. Crear un nuevo artesano (Requiere Admin Token)
+POST {{host}}/api/v1/artesanos
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nombre": "Mamerto Sánchez",
+  "comunidadOrigen": "Quinua, Ayacucho",
+  "historiaBiografia": "Maestro ceramista tradicional peruano, declarado Personalidad Meritoria de la Cultura."
+}
+
+### 3. Editar un artesano (Requiere Admin Token)
+@artesanoId = 00000000-0000-0000-0000-000000000000
+PUT {{host}}/api/v1/artesanos/{{artesanoId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nombre": "Mamerto Sánchez Editado",
+  "comunidadOrigen": "Quinua Antigua",
+  "historiaBiografia": "Maestro ceramista tradicional con más de 40 años de trayectoria y reconocimiento mundial."
+}
+
+### 4. Eliminar un artesano (Soft Delete, Requiere Admin Token)
+DELETE {{host}}/api/v1/artesanos/{{artesanoId}}
+Authorization: Bearer {{token}}
